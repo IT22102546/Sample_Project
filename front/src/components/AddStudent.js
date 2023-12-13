@@ -1,4 +1,5 @@
 import React,{useState} from "react";
+import axios from "axios";
 
 
 
@@ -24,7 +25,15 @@ export default function AddStudent()
 
     }
 
-    console.log(newStudent);
+   axios.post("http://localhost:8070/student/add",newStudent).then(()=>{
+
+    alert("Student Added");
+
+   }).catch((err)=>{
+
+      alert(err);
+
+   })
   }
 
     return(
